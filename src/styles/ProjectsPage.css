@@ -1,0 +1,43 @@
+/* Projects Page Styling */
+.projects-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Ensure proper spacing between sections */
+.projects-page .projects-hero + .projects-section {
+  margin-top: 0;
+  padding-top: 80px;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Additional animations for page load */
+.projects-page {
+  animation: pageSlideIn 0.8s ease-out;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Override any global margins for projects page */
+.projects-page .section {
+  margin: 0;
+}
+
+/* Ensure proper layout flow */
+.projects-page > * {
+  width: 100%;
+  box-sizing: border-box;
+}

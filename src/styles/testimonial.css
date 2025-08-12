@@ -1,0 +1,233 @@
+/* ==== Testimonial Section Background ==== */
+.testimonial-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../assets/images/gallery/section-bg2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==== Section Header ==== */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.testimonial-title {
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==== Testimonial Card ==== */
+.testimonial-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 50px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.testimonial-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==== Quote Icon ==== */
+.quote-icon {
+  font-size: 3rem;
+  color: #ff6b35;
+  margin-bottom: 20px;
+}
+
+/* ==== Quote Text ==== */
+.testimonial-quote {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* ==== Author Info ==== */
+.testimonial-author {
+  text-align: center;
+}
+
+.author-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.author-position {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 5px;
+}
+
+.author-company {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ==== Navigation Buttons & Dots ==== */
+.testimonial-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  margin-top: 40px;
+  padding-right: 20px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.nav-btn:hover {
+  background: #ff6b35;
+  transform: scale(1.1);
+}
+
+.testimonial-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background: #ff6b35;
+  transform: scale(1.2);
+}
+
+/* ==== Responsive Design ==== */
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 60px 0;
+    background-attachment: scroll;
+  }
+
+  .testimonial-title {
+    font-size: 2.5rem;
+  }
+
+  .background-text {
+    font-size: 6rem;
+  }
+
+  .testimonial-card {
+    padding: 40px 30px;
+  }
+
+  .testimonial-quote {
+    font-size: 1.1rem;
+  }
+
+  .quote-icon {
+    font-size: 2.5rem;
+  }
+
+  .nav-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-section {
+    padding: 50px 0;
+    background-attachment: scroll;
+  }
+
+  .testimonial-title {
+    font-size: 2rem;
+  }
+
+  .background-text {
+    font-size: 4rem;
+  }
+
+  .testimonial-card {
+    padding: 30px 20px;
+  }
+
+  .testimonial-quote {
+    font-size: 1rem;
+  }
+
+  .quote-icon {
+    font-size: 2rem;
+  }
+
+  .author-name {
+    font-size: 1.2rem;
+  }
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .testimonial-navigation {
+    gap: 20px;
+  }
+} /* Fade Animations */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}

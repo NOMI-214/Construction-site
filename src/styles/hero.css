@@ -1,0 +1,783 @@
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1200px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-text-container {
+  margin-bottom: 40px;
+}
+
+/* Orange line */
+.orange-line {
+  width: 40px;
+  height: 2px;
+  background: #ff6b35;
+  margin: 0 auto 10px;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+/* Top and bottom text */
+.hero-top-text,
+.hero-bottom-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hero-top-text span,
+.hero-bottom-text span {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+/* Main title */
+.hero-title {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+/* ADVANCED text */
+.advanced-text {
+  display: block;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  color: #ff6b35;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  animation: slideInDown 1s ease-out 0.5s both;
+}
+
+/* CONSTRUCTION container */
+.construction-container {
+  position: relative;
+  display: inline-block;
+  animation: slideInUp 1s ease-out 0.7s both;
+}
+
+/* CONSTRUCTION text */
+.construction-text {
+  display: block;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Container for wave effect */
+.liquid-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: transparent;
+  
+  /* Adjusted SVG so wave height is higher to fill ~50% of text */
+  background: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" preserveAspectRatio="none">\
+  <path fill="orange" fill-opacity="0.8" d="M0 12 Q 15 2 30 12 T 60 12 T 90 12 T 120 12 V 28 H 0 Z" />\
+</svg>') repeat-x;
+  
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: waveFlow 4s linear infinite;
+}
+
+  
+
+/* Animation for moving waves */
+@keyframes waveFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: -200px 0; }
+}
+
+
+.liquid-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #ff6b35 50%, transparent 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: liquidWave2 4s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.liquid-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #ff6b35 50%, transparent 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: liquidWave3 5s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 1.2s both;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: transparent;
+  color: #ff6b35;
+  border: 2px solid #ff6b35;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #ff6b35;
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover::before {
+  left: 0;
+}
+
+.btn-primary:hover {
+  color: white;
+  border-color: #ff6b35;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.btn-secondary:hover::before {
+  left: 0;
+}
+
+.btn-secondary:hover {
+  color: #000000;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes liquidWave {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  25% {
+    transform: translateY(-2px) scaleY(0.95);
+  }
+  50% {
+    transform: translateY(1px) scaleY(1.05);
+  }
+  75% {
+    transform: translateY(-1px) scaleY(0.98);
+  }
+}
+
+@keyframes liquidWave2 {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  33% {
+    transform: translateY(1px) scaleY(1.03);
+  }
+  66% {
+    transform: translateY(-1px) scaleY(0.97);
+  }
+}
+
+@keyframes liquidWave3 {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  20% {
+    transform: translateY(-1px) scaleY(0.99);
+  }
+  40% {
+    transform: translateY(2px) scaleY(1.02);
+  }
+  60% {
+    transform: translateY(-1px) scaleY(0.98);
+  }
+  80% {
+    transform: translateY(1px) scaleY(1.01);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh;
+    min-height: 500px;
+  }
+  
+  .hero-content {
+    padding: 0 15px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 200px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .orange-line {
+    width: 30px;
+  }
+  
+  .hero-top-text span,
+  .hero-bottom-text span {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 70vh;
+    min-height: 400px;
+  }
+  
+  .advanced-text,
+  .construction-text {
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: 1px;
+  }
+  
+  .construction-text {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  
+  .liquid-text {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 180px;
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  
+  .hero-text-container {
+    margin-bottom: 30px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .construction-text {
+    -webkit-text-stroke: 1.5px #ffffff;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .liquid-text,
+  .liquid-text::before,
+  .liquid-text::after,
+  .hero-content,
+  .advanced-text,
+  .construction-container,
+  .construction-text,
+  .hero-top-text span,
+  .hero-bottom-text span,
+  .orange-line,
+  .hero-buttons {
+    animation: none;
+  }
+  
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
+}
+/* ===============================
+   HERO SECTION BASE STYLES
+================================== */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ===============================
+   BACKGROUND & OVERLAY
+================================== */
+.hero-background,
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background {
+  z-index: 1;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* ===============================
+   CONTENT
+================================== */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1200px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-text-container {
+  margin-bottom: 40px;
+}
+
+/* Orange separator line */
+.orange-line {
+  width: 40px;
+  height: 2px;
+  background: #ff6b35;
+  margin: 0 auto 10px;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+/* Top/Bottom text shared styles */
+.hero-top-text,
+.hero-bottom-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hero-top-text span,
+.hero-bottom-text span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+/* ===============================
+   TITLES
+================================== */
+.hero-title {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+/* ADVANCED text */
+.advanced-text,
+.construction-text,
+.liquid-text {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.advanced-text {
+  display: block;
+  color: #ff6b35;
+  margin-bottom: 10px;
+  animation: slideInDown 1s ease-out 0.5s both;
+}
+
+/* CONSTRUCTION container */
+.construction-container {
+  position: relative;
+  display: inline-block;
+  animation: slideInUp 1s ease-out 0.7s both;
+}
+
+/* Outline text */
+.construction-text {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===============================
+   LIQUID / WAVE TEXT EFFECT
+================================== */
+.liquid-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  background: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" preserveAspectRatio="none">\
+<path fill="orange" fill-opacity="0.8" d="M0 17 Q 15 27 30 17 T 60 17 T 90 17 T 120 17 V 28 H 0 Z" />\
+</svg>') repeat-x;
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: waveFlow 4s linear infinite;
+}
+
+/* Layered wave gradients */
+.liquid-text::before,
+.liquid-text::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to top, #ff6b35 50%, transparent 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.liquid-text::before {
+  animation: liquidWave2 4s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.liquid-text::after {
+  animation: liquidWave3 5s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+/* ===============================
+   BUTTONS
+================================== */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 1.2s both;
+}
+
+/* Base button style */
+.btn-primary,
+.btn-secondary {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.btn-primary {
+  color: #ff6b35;
+  border-color: #ff6b35;
+}
+
+.btn-secondary {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Hover fill effect (shared) */
+.btn-primary::before,
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%; height: 100%;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.btn-primary::before { background: #ff6b35; }
+.btn-secondary::before { background: #fff; }
+
+.btn-primary:hover::before,
+.btn-secondary:hover::before { left: 0; }
+
+/* Hover styles */
+.btn-primary:hover {
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary:hover {
+  color: #000;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   ANIMATIONS
+================================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes waveFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: -200px 0; }
+}
+
+@keyframes liquidWave2 {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  33% { transform: translateY(1px) scaleY(1.03); }
+  66% { transform: translateY(-1px) scaleY(0.97); }
+}
+
+@keyframes liquidWave3 {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  20% { transform: translateY(-7px) scaleY(0.82); }
+  40% { transform: translateY(8px) scaleY(1.18); }
+  60% { transform: translateY(-5px) scaleY(0.87); }
+  80% { transform: translateY(4px) scaleY(1.12); }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================== */
+@media (max-width: 768px) {
+  .hero-section { height: 80vh; min-height: 500px; }
+  .hero-content { padding: 0 15px; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary {
+    width: 200px; padding: 12px 20px; font-size: 14px;
+  }
+  .orange-line { width: 30px; }
+  .hero-top-text span, .hero-bottom-text span {
+    font-size: 12px; letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section { height: 70vh; min-height: 400px; }
+  .advanced-text, .construction-text, .liquid-text {
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: 1px;
+  }
+  .construction-text { -webkit-text-stroke: 1px #fff; }
+  .btn-primary, .btn-secondary {
+    width: 180px; padding: 10px 15px; font-size: 13px;
+  }
+  .hero-text-container { margin-bottom: 30px; }
+}
+
+/* Retina fix */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .construction-text { -webkit-text-stroke: 1.5px #fff; }
+}
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .liquid-text, .liquid-text::before, .liquid-text::after,
+  .hero-content, .advanced-text, .construction-container,
+  .construction-text, .hero-top-text span, .hero-bottom-text span,
+  .orange-line, .hero-buttons { animation: none; }
+  .btn-primary:hover, .btn-secondary:hover { transform: none; }
+}

@@ -1,0 +1,96 @@
+.topbar {
+  background-color: #111;
+  color: white;
+  font-size: 0.8rem;
+  padding: 8px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.topbar-item i {
+  color: #ff6b35;
+  font-size: 0.9rem;
+}
+
+.topbar-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-icon {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+  color: #ff6b35;
+  background: rgba(255, 107, 53, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .topbar-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .topbar-left {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .topbar-item {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    font-size: 0.7rem;
+    padding: 5px 0;
+  }
+  
+  .topbar-item {
+    font-size: 0.7rem;
+  }
+  
+  .social-icon {
+    width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+  }
+} 

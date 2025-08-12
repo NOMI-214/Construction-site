@@ -1,0 +1,259 @@
+/* Contact Page Styling */
+.contact-page {
+  min-height: 100vh;
+}
+
+/* Contact Hero Section */
+.contact-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ff6b35" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.1;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.contact-hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: slideInDown 1s ease-out 0.3s both;
+}
+
+.contact-hero-subtitle {
+  font-size: 1.5rem;
+  color: #ff6b35;
+  margin-bottom: 30px;
+  font-weight: 400;
+  animation: slideInUp 1s ease-out 0.6s both;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  animation: fadeIn 1s ease-out 0.9s both;
+}
+
+.breadcrumb-link {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.breadcrumb-link:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.breadcrumb-separator {
+  color: #666;
+  font-weight: 600;
+}
+
+.breadcrumb-current {
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hero Background Elements */
+.hero-background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.crane-element {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,80 L80,80 L80,20 L60,20 L60,40 L40,40 L40,20 L20,20 Z" fill="%23ff6b35" opacity="0.3"/><circle cx="50" cy="30" r="15" fill="%23ff6b35" opacity="0.3"/></svg>') no-repeat center;
+  background-size: contain;
+  animation: float 6s ease-in-out infinite;
+}
+
+.worker-element {
+  position: absolute;
+  bottom: 30px;
+  left: 60px;
+  width: 60px;
+  height: 60px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="30" r="20" fill="%23ff6b35" opacity="0.3"/><rect x="30" y="50" width="40" height="30" fill="%23ff6b35" opacity="0.3"/></svg>') no-repeat center;
+  background-size: contain;
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .contact-hero-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .contact-hero-title {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+  
+  .contact-hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .crane-element {
+    width: 60px;
+    height: 60px;
+    right: 30px;
+  }
+  
+  .worker-element {
+    width: 50px;
+    height: 50px;
+    left: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    height: 45vh;
+    min-height: 350px;
+  }
+  
+  .contact-hero-title {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+  
+  .contact-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .breadcrumb {
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .crane-element {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+  }
+  
+  .worker-element {
+    width: 40px;
+    height: 40px;
+    left: 30px;
+  }
+}
