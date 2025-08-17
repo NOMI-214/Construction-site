@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import "./styles/main.css";
 
-// Import Components
-import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import ServicesComponent from "./components/Services";
@@ -24,6 +22,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import ServicesDetails from "./pages/ServicesDetails";
 import ServicesPageComponent from "./pages/Services";
 import Loader from "./components/Loader";
+import AboutUs from "./components/AboutUs"; 
 // Placeholder pages for routing
 
 const ServicesPage = () => <ServicesPageComponent />;
@@ -47,6 +46,7 @@ const HomePage = () => (
   <>
     <HeroSection />
     <ServicesComponent />
+    <AboutUs />
     <ProjectsComponent />
     {/* <ContactSection /> */}
     <Stats />
@@ -75,7 +75,6 @@ const AppContent = () => {
   return (
     <div className="App">
       <Loader isLoading={isLoading} />
-      {/* <TopBar /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

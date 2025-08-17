@@ -1,20 +1,33 @@
-* {
+/* ===============================
+   App.css (Cleaned for Tailwind)
+================================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset and layout fixes */
+html, body, #root {
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
+  background-color: #fff; /* Change if you want a default bg */
 }
 
+/* Ensure all elements respect border-box */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 
+/* App wrapper */
 .App {
   text-align: center;
 }
 
+/* Logo animation (if still needed) */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -25,15 +38,8 @@ body {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-body {
-  margin: 0;
-  padding: 0;
-}
 
-* {
-  box-sizing: border-box;
-}
-
+/* Example header (if you use it) */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -49,6 +55,7 @@ body {
   color: #61dafb;
 }
 
+/* Logo animation keyframes */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
